@@ -20,14 +20,12 @@ public class VampireMod
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public VampireMod(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the common setup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register entity types and items
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
 
-        // Register the Deferred Register to the mod event bus for easy item access
         modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

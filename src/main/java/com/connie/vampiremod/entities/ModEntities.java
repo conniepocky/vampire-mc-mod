@@ -14,7 +14,6 @@ public class ModEntities {
 
     public static final Supplier<EntityType<VampireEntity>> VAMPIRE_ENTITY = ENTITY_TYPES.register(
             "vampire_entity",
-            // The entity type, created using a builder.
             () -> EntityType.Builder.of(
                             VampireEntity::new,
                             MobCategory.MONSTER

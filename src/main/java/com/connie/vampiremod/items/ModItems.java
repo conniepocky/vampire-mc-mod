@@ -15,12 +15,10 @@ import com.connie.vampiremod.entities.ModEntities;
 import net.minecraft.world.item.CreativeModeTabs;
 
 public class ModItems {
-    private static final String MODID = "vampiremod"; // Your mod ID
+    private static final String MODID = "vampiremod";
 
-    // Create a Deferred Register to hold Items under the "vampiremod" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
 
-    // Create a Spawn Egg for the vampire entity with the id "vampiremod:vampire_spawn_egg"
     public static final DeferredItem<SpawnEggItem> VAMPIRE_SPAWN_EGG = ITEMS.registerItem("vampire_spawn_egg",
             properties -> new SpawnEggItem(
                     ModEntities.VAMPIRE_ENTITY.get(),
@@ -29,7 +27,6 @@ public class ModItems {
                     properties
             ));
 
-    // Create a creative tab for the spawn egg
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID)
             .register("example_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.vampiremod")) // The name of the creative tab
